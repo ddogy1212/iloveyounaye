@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/love_widget_background"
     android:clipToOutline="true"
-    android:contentDescription="나예 사랑해 음성 재생"
+    android:contentDescription="음성위젯 재생"
     android:clickable="true">
 
     <ImageView

@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="false"
-        android:label="나예 사진위젯"
+        android:label="음성위젯"
         android:icon="@drawable/ic_app"
         android:theme="@android:style/Theme.Material.Light.NoActionBar"
         android:supportsRtl="true">
