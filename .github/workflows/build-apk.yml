@@ -20,8 +20,27 @@ jobs:
           java-version: '17'
       # The hosted Ubuntu runner already includes Android SDK command-line tools.
       # setup-android@v3 fails here while trying to install obsolete package 'tools'.
-      - name: Install platform
-        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - name: Configure and check Android SDK
+        shell: bash
+        run: |
+          SDK_DIR="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-/usr/local/lib/android/sdk}}"
+          echo "ANDROID_HOME=$SDK_DIR" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK_DIR" >> "$GITHUB_ENV"
+          echo "Using SDK at $SDK_DIR"
+          ls "$SDK_DIR" || true
+          if [ -f "$SDK_DIR/platforms/android-35/android.jar" ] && [ -d "$SDK_DIR/build-tools/35.0.0" ]; then
+            echo "Android SDK 35 and Build Tools 35 are already installed"
+          else
+            SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"
+            if [ ! -x "$SDKMGR" ]; then
+              SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"
+            fi
+            if [ ! -x "$SDKMGR" ]; then
+              echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"
+              exit 1
+            fi
+            "$SDKMGR" --install 'platforms;android-35' 'build-tools;35.0.0'
+          fi
       - name: Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
         with:
