@@ -4,6 +4,9 @@ on:
     paths:
       - '.github/workflows/diagnose-apk.yml'
   workflow_dispatch:
+  workflow_run:
+    workflows: ['Build Android APK']
+    types: [completed]
 
 permissions:
   contents: write
@@ -22,7 +25,8 @@ jobs:
           set -eu
           printf '# APK build error report\n\n' > BUILD_DIAGNOSTICS.md
           gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/build-apk.yml/runs?per_page=5" > /tmp/naye-runs.json
-          jq -r '.workflow_runs[] | select(.conclusion == "failure") | .id' /tmp/naye-runs.json | head -3 > /tmp/naye-run-ids.txt
+          jq -r '.workflow_runs[:3][] | .id' /tmp/naye-runs.json > /tmp/naye-run-ids.txt
+          jq -r '.workflow_runs[:3][] | "- Run \\(.id): \\(.status) / \\(.conclusion)"' /tmp/naye-runs.json >> BUILD_DIAGNOSTICS.md
           while read -r id; do
             [ -n "$id" ] || continue
             printf '\n## Run ID: %s\n\n' "$id" >> BUILD_DIAGNOSTICS.md
