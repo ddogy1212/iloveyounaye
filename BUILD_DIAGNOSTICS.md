@@ -1,12 +1,83 @@
 # APK build error report
 
-37926113217	in_progress	
+37926113217	completed	failure
 37925726640	completed	failure
 37925655819	completed	failure
 
 ## Run ID: 37926113217
 
-Could not download logs for run 37926113217.
+```text
+29:2026-10-09T11:49:35.8216213Z Prepare all required actions
+140:2026-10-09T11:49:39.8578881Z ##[group]Run sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+141:2026-10-09T11:49:39.8579448Z [36;1msdkmanager 'platforms;android-35' 'build-tools;35.0.0'[0m
+147:2026-10-09T11:49:39.8914567Z /home/runner/work/_temp/eb723003-a7b2-4f31-b21b-6f516f1708f0.sh: line 1: sdkmanager: command not found
+148:2026-10-09T11:49:39.8921389Z ##[error]Process completed with exit code 127.
+203:2026-10-09T11:49:35.8216197Z Prepare all required actions
+314:﻿2026-10-09T11:49:39.8578826Z ##[group]Run sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+315:2026-10-09T11:49:39.8579444Z [36;1msdkmanager 'platforms;android-35' 'build-tools;35.0.0'[0m
+321:2026-10-09T11:49:39.8914537Z /home/runner/work/_temp/eb723003-a7b2-4f31-b21b-6f516f1708f0.sh: line 1: sdkmanager: command not found
+322:2026-10-09T11:49:39.8921372Z ##[error]Process completed with exit code 127.
+```
+
+### Tail of logs
+
+```text
+2026-10-09T11:49:39.7101055Z   java-version: 17
+2026-10-09T11:49:39.7101174Z   java-package: jdk
+2026-10-09T11:49:39.7101294Z   check-latest: false
+2026-10-09T11:49:39.7101413Z   server-id: github
+2026-10-09T11:49:39.7101536Z   server-username: GITHUB_ACTOR
+2026-10-09T11:49:39.7101685Z   server-password: GITHUB_TOKEN
+2026-10-09T11:49:39.7101835Z   overwrite-settings: true
+2026-10-09T11:49:39.7101972Z   job-status: success
+2026-10-09T11:49:39.7103573Z   token: ***
+2026-10-09T11:49:39.7103696Z ##[endgroup]
+2026-10-09T11:49:39.8233380Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+2026-10-09T11:49:39.8240080Z ##[group]Installed distributions
+2026-10-09T11:49:39.8263783Z Resolved Java 17.0.20+1 from tool-cache
+2026-10-09T11:49:39.8264109Z Setting Java 17.0.20+1 as the default
+2026-10-09T11:49:39.8270565Z (node:2084) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T11:49:39.8271190Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T11:49:39.8272805Z Creating toolchains.xml for JDK version 17 from temurin
+2026-10-09T11:49:39.8332826Z Writing to /home/runner/.m2/toolchains.xml
+2026-10-09T11:49:39.8333275Z 
+2026-10-09T11:49:39.8333366Z Java configuration:
+2026-10-09T11:49:39.8333594Z   Distribution: temurin
+2026-10-09T11:49:39.8333844Z   Version: 17.0.20+1
+2026-10-09T11:49:39.8334140Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-09T11:49:39.8334346Z 
+2026-10-09T11:49:39.8334668Z ##[endgroup]
+2026-10-09T11:49:39.8345313Z Creating settings.xml with server-id: github
+2026-10-09T11:49:39.8404321Z Writing to /home/runner/.m2/settings.xml
+﻿2026-10-09T11:49:39.8578826Z ##[group]Run sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+2026-10-09T11:49:39.8579444Z [36;1msdkmanager 'platforms;android-35' 'build-tools;35.0.0'[0m
+2026-10-09T11:49:39.8820242Z shell: /usr/bin/bash -e {0}
+2026-10-09T11:49:39.8820689Z env:
+2026-10-09T11:49:39.8820893Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-09T11:49:39.8821186Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-09T11:49:39.8821403Z ##[endgroup]
+2026-10-09T11:49:39.8914537Z /home/runner/work/_temp/eb723003-a7b2-4f31-b21b-6f516f1708f0.sh: line 1: sdkmanager: command not found
+2026-10-09T11:49:39.8921372Z ##[error]Process completed with exit code 127.
+﻿2026-10-09T11:49:39.9002502Z Post job cleanup.
+2026-10-09T11:49:39.9897348Z (node:2101) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T11:49:39.9898117Z (Use `node --trace-deprecation ...` to show where the warning was created)
+﻿2026-10-09T11:49:40.0077094Z Post job cleanup.
+2026-10-09T11:49:40.0686866Z [command]/usr/bin/git version
+2026-10-09T11:49:40.0719153Z git version 2.55.0
+2026-10-09T11:49:40.0743036Z Temporarily overriding HOME='/home/runner/work/_temp/52ff4606-1741-4a34-a8b1-4a8f2acc3a6d' before making global git config changes
+2026-10-09T11:49:40.0743810Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T11:49:40.0746939Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
+2026-10-09T11:49:40.0780670Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T11:49:40.0808293Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T11:49:40.1010191Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T11:49:40.1041419Z http.https://github.com/.extraheader
+2026-10-09T11:49:40.1046155Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T11:49:40.1079633Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T11:49:40.1276952Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T11:49:40.1307888Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+﻿2026-10-09T11:49:40.1596213Z Cleaning up orphan processes
+2026-10-09T11:49:40.1782591Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions
+```
 
 ## Run ID: 37925726640
 
