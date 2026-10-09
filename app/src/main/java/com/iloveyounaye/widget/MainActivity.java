@@ -40,7 +40,7 @@ public final class MainActivity extends Activity {
         panel.addView(icon);
 
         TextView title = new TextView(this);
-        title.setText("나예 사랑해");
+        title.setText("나예 사진위젯");
         title.setTextColor(Color.rgb(50, 30, 45));
         title.setTextSize(26);
         title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
@@ -48,7 +48,7 @@ public final class MainActivity extends Activity {
         panel.addView(title);
 
         TextView desc = new TextView(this);
-        desc.setText("홈 화면의 1×1 하트를 누르면\n다른 앱을 열지 않고 음성이 재생돼요 ♡");
+        desc.setText("홈 화면의 1×1 사진을 누르면\n다른 앱을 열지 않고 음성이 재생돼요 ♡");
         desc.setTextColor(Color.rgb(110, 80, 100));
         desc.setTextSize(15);
         desc.setGravity(Gravity.CENTER);
@@ -68,7 +68,7 @@ public final class MainActivity extends Activity {
             if (manager.isRequestPinAppWidgetSupported()) {
                 manager.requestPinAppWidget(provider, null, null);
             } else {
-                Toast.makeText(this, "홈 화면 빈 곳 길게 누르기 → 위젯 → 나예 사랑해", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "홈 화면 빈 곳 길게 누르기 → 위젯 → 나예 사진위젯", Toast.LENGTH_LONG).show();
             }
         });
 
