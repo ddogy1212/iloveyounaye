@@ -1,8 +1,97 @@
 # APK build error report
 
+37926217878	completed	success
 37926113217	completed	failure
 37925726640	completed	failure
-37925655819	completed	failure
+
+## Run ID: 37926217878
+
+```text
+29:2026-10-09T11:50:37.2448018Z Prepare all required actions
+149:2026-10-09T11:50:42.1822422Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
+151:2026-10-09T11:50:42.1823553Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
+154:2026-10-09T11:50:42.1824755Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
+190:2026-10-09T11:50:42.2416859Z   dependency-graph-continue-on-failure: true
+206:2026-10-09T11:50:45.6395977Z Gradle User Home cache not found. Will initialize empty.
+212:2026-10-09T11:50:59.6877059Z Gradle distribution 8.9 not found in cache. Will download.
+241:2026-10-09T11:51:04.8442641Z  - Enhanced Error and Warning Messages
+325:2026-10-09T11:51:54.1339629Z (node:2758) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+373:2026-10-09T11:52:01.3790244Z Gradle distribution 8.11 not found in cache. Will download.
+392:2026-10-09T11:52:06.6017481Z  - Java compilation errors at the end of the build output
+398:2026-10-09T11:52:06.7035202Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
+565:2026-10-09T11:50:37.2447974Z Prepare all required actions
+685:2026-10-09T11:50:42.1822419Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
+687:2026-10-09T11:50:42.1823402Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
+690:2026-10-09T11:50:42.1824751Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
+726:2026-10-09T11:50:42.2416819Z   dependency-graph-continue-on-failure: true
+742:2026-10-09T11:50:45.6395911Z Gradle User Home cache not found. Will initialize empty.
+748:2026-10-09T11:50:59.6877003Z Gradle distribution 8.9 not found in cache. Will download.
+777:2026-10-09T11:51:04.8442636Z  - Enhanced Error and Warning Messages
+861:2026-10-09T11:51:54.1339534Z (node:2758) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+909:2026-10-09T11:52:01.3790199Z Gradle distribution 8.11 not found in cache. Will download.
+928:2026-10-09T11:52:06.6017473Z  - Java compilation errors at the end of the build output
+934:2026-10-09T11:52:06.7034685Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
+```
+
+### Tail of logs
+
+```text
+2026-10-09T11:52:12.8170929Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8172333Z jars (/home/runner/.gradle/caches/jars-9) removing files not accessed on or after Fri Oct 09 11:50:45 UTC 2026.
+2026-10-09T11:52:12.8200957Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8210897Z jars (/home/runner/.gradle/caches/jars-9) cleaned up in 0.009 secs.
+2026-10-09T11:52:12.8230412Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8263073Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8309469Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] removing files not accessed on or after Fri Oct 09 11:50:45 UTC 2026.
+2026-10-09T11:52:12.8312200Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8343222Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8361811Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] removing files not accessed on or after Fri Oct 09 11:50:45 UTC 2026.
+2026-10-09T11:52:12.8707058Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8732136Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/metadata-2.107] cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8733841Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
+2026-10-09T11:52:12.8735115Z artifact cache (/home/runner/.gradle/caches/modules-2) cleaned up in 0.066 secs.
+2026-10-09T11:52:12.9649018Z ##[endgroup]
+2026-10-09T11:52:12.9650062Z ##[group]Caching Gradle state
+2026-10-09T11:52:13.1202066Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-09T11:52:13.1521638Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-09T11:52:13.2841507Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-09T11:52:13.5544142Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-09T11:52:13.7061231Z Sent 161247 of 161247 (100.0%), 0.4 MBs/sec
+2026-10-09T11:52:13.7087474Z Sent 100289 of 100289 (100.0%), 0.3 MBs/sec
+2026-10-09T11:52:13.9207292Z Saved cache entry with key gradle-instrumented-jars-v1-bbc6e71b897b09dfadc6b2949a588b44 from /home/runner/.gradle/caches/jars-*/*/ in 820ms
+2026-10-09T11:52:13.9451715Z Saved cache entry with key gradle-groovy-dsl-v1-11bfb4b6be52d10d04542b89e0184ac9 from /home/runner/.gradle/caches/*/groovy-dsl/*/ in 825ms
+2026-10-09T11:52:14.9071139Z Sent 33030144 of 90559706 (36.5%), 31.5 MBs/sec
+2026-10-09T11:52:15.3552833Z Sent 53356498 of 53356498 (100.0%), 50.9 MBs/sec
+2026-10-09T11:52:15.7162044Z Saved cache entry with key gradle-transforms-v1-8f89919c4729f54bb880bdaae63f5c56 from /home/runner/.gradle/caches/transforms-4/*/,/home/runner/.gradle/caches/*/transforms/*/ in 2400ms
+2026-10-09T11:52:16.0685127Z Sent 77398016 of 90559706 (85.5%), 34.1 MBs/sec
+2026-10-09T11:52:16.3626161Z Sent 90559706 of 90559706 (100.0%), 35.1 MBs/sec
+2026-10-09T11:52:16.5903286Z Saved cache entry with key gradle-dependencies-v1-870d1cf1b7f43ef1a0ad94af46ccdb5e from /home/runner/.gradle/caches/modules-*/files-*/*/*/*/* in 3505ms
+2026-10-09T11:52:16.6715690Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-09T11:52:17.4110304Z Sent 820778 of 820778 (100.0%), 1.6 MBs/sec
+2026-10-09T11:52:17.6432957Z Saved cache entry with key gradle-home-v1|Linux-X64|apk[e080f0fdc288b6f0c5023fd4b86f7a10]-5af2be1f0a423f5edd2621e8a0a1ec1dea795374 from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 985ms
+2026-10-09T11:52:17.6434764Z ##[endgroup]
+2026-10-09T11:52:17.6441667Z Generating Job Summary
+2026-10-09T11:52:17.6453754Z Completed post-action step
+﻿2026-10-09T11:52:17.6654537Z Post job cleanup.
+2026-10-09T11:52:17.8008651Z (node:3023) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T11:52:17.8010033Z (Use `node --trace-deprecation ...` to show where the warning was created)
+﻿2026-10-09T11:52:17.8149407Z Post job cleanup.
+2026-10-09T11:52:17.9021768Z [command]/usr/bin/git version
+2026-10-09T11:52:17.9060489Z git version 2.55.0
+2026-10-09T11:52:17.9094268Z Temporarily overriding HOME='/home/runner/work/_temp/596e6b43-ae42-4a6f-a8ce-5bdf32a13053' before making global git config changes
+2026-10-09T11:52:17.9095752Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T11:52:17.9100640Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
+2026-10-09T11:52:17.9140032Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T11:52:17.9171711Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T11:52:17.9390235Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T11:52:17.9415128Z http.https://github.com/.extraheader
+2026-10-09T11:52:17.9427918Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T11:52:17.9461329Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T11:52:17.9662571Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T11:52:17.9701991Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+﻿2026-10-09T11:52:18.0061608Z Cleaning up orphan processes
+2026-10-09T11:52:18.0305153Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4, softprops/action-gh-release@v2. For more inform
+```
 
 ## Run ID: 37926113217
 
@@ -152,117 +241,4 @@
 2026-10-09T11:45:51.6638176Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
 ﻿2026-10-09T11:45:51.7161535Z Cleaning up orphan processes
 2026-10-09T11:45:51.7494726Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions
-```
-
-## Run ID: 37925655819
-
-```text
-29:2026-10-09T11:45:07.4197651Z Prepare all required actions
-151:2026-10-09T11:45:10.8750104Z Found preinstalled sdkmanager in /usr/local/lib/android/sdk/cmdline-tools/latest with following source.properties:
-156:2026-10-09T11:45:10.8751672Z Wrong version in preinstalled sdkmanager
-160:2026-10-09T11:45:12.1316135Z [command]/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager --licenses
-241:2026-10-09T11:45:16.2659998Z 3.3 Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the Google TV Add-on or any part of the Google TV
-307:2026-10-09T11:45:16.2796836Z (B) Google is required to do so by law; or
-387:2026-10-09T11:45:16.2844544Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer
-447:2026-10-09T11:45:16.2890691Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you ha
-524:2026-10-09T11:45:16.2935803Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, di
-586:2026-10-09T11:45:16.2978779Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you ha
-637:2026-10-09T11:45:16.3015051Z To get started with the Android SDK Preview, you must agree to the following terms and conditions. As described below, please note that this is a preview version of the Android SDK, subject to change, that you use at your own risk. The Android SDK Preview is not a st
-665:2026-10-09T11:45:16.3033991Z 3.3 You may not use the Preview for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse eng
-735:2026-10-09T11:45:16.3087033Z 10.2 YOUR USE OF THE PREVIEW AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE PREVIEW IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SU
-805:2026-10-09T11:45:16.3137674Z 3.3 You may not use the GDK for any purpose not expressly permitted by this License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engine
-870:2026-10-09T11:45:16.3197700Z 9.3 Google may at any time, terminate this License Agreement with you if: (A) you have breached any provision of this License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of GDK (such as APIs) to you 
-942:2026-10-09T11:45:16.3272034Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer
-996:2026-10-09T11:45:16.3342660Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you ha
-1076:2026-10-09T11:45:16.3443867Z 10.1 Controlling Law. This Agreement shall be governed by California law excluding its choice of law rules. With the exception of MIPS’ rights to enforce its intellectual property rights and any confidentiality obligations under this Agreement or any licenses dist
-1086:2026-10-09T11:45:16.3467841Z 10.6 Export Regulations / Export Control. Recipient shall not export, either directly or indirectly, any product, service or technical data or system incorporating the Evaluation Materials without first obtaining any required license or other necessary approval from
-1088:2026-10-09T11:45:16.3474391Z 10.7 Special Terms for Pre-Release Materials. If so indicated in the description of the Evaluation Software, the Evaluation Software may contain Pre-Release Materials. Recipient hereby understands, acknowledges and agrees that: (i) Pre-Release Materials may not be f
-1096:2026-10-09T11:45:16.3483681Z [command]/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager tools
-1111:2026-10-09T11:45:17.5273641Z Warning: Failed to find package 'tools'
-1113:2026-10-09T11:45:17.7378546Z                 error = new Error(`The process '${this.toolPath}' failed with exit code ${this.processExitCode}`);
-1116:2026-10-09T11:45:17.7379740Z Error: The process '/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager' failed with exit code 1
-1180:2026-10-09T11:45:07.4197618Z Prepare all required actions
-1302:2026-10-09T11:45:10.8750048Z Found preinstalled sdkmanager in /usr/local/lib/android/sdk/cmdline-tools/latest with following source.properties:
-1307:2026-10-09T11:45:10.8751601Z Wrong version in preinstalled sdkmanager
-1311:2026-10-09T11:45:12.1316126Z [command]/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager --licenses
-1392:2026-10-09T11:45:16.2659947Z 3.3 Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the Google TV Add-on or any part of the Google T
-1458:2026-10-09T11:45:16.2796835Z (B) Google is required to do so by law; or
-1538:2026-10-09T11:45:16.2844445Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse enginee
-1598:2026-10-09T11:45:16.2890686Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you h
-1675:2026-10-09T11:45:16.2935801Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, d
-1737:2026-10-09T11:45:16.2978769Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you h
-1788:2026-10-09T11:45:16.3015047Z To get started with the Android SDK Preview, you must agree to the following terms and conditions. As described below, please note that this is a preview version of the Android SDK, subject to change, that you use at your own risk. The Android SDK Preview is not a s
-1816:2026-10-09T11:45:16.3033987Z 3.3 You may not use the Preview for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse en
-1886:2026-10-09T11:45:16.3087028Z 10.2 YOUR USE OF THE PREVIEW AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE PREVIEW IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM S
-1956:2026-10-09T11:45:16.3137660Z 3.3 You may not use the GDK for any purpose not expressly permitted by this License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engin
-2021:2026-10-09T11:45:16.3197693Z 9.3 Google may at any time, terminate this License Agreement with you if: (A) you have breached any provision of this License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of GDK (such as APIs) to you
-2093:2026-10-09T11:45:16.3272019Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse enginee
-2147:2026-10-09T11:45:16.3342655Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you h
-2227:2026-10-09T11:45:16.3443842Z 10.1 Controlling Law. This Agreement shall be governed by California law excluding its choice of law rules. With the exception of MIPS’ rights to enforce its intellectual property rights and any confidentiality obligations under this Agreement or any licenses dist
-2237:2026-10-09T11:45:16.3467814Z 10.6 Export Regulations / Export Control. Recipient shall not export, either directly or indirectly, any product, service or technical data or system incorporating the Evaluation Materials without first obtaining any required license or other necessary approval from
-2239:2026-10-09T11:45:16.3474382Z 10.7 Special Terms for Pre-Release Materials. If so indicated in the description of the Evaluation Software, the Evaluation Software may contain Pre-Release Materials. Recipient hereby understands, acknowledges and agrees that: (i) Pre-Release Materials may not be f
-2247:2026-10-09T11:45:16.3483679Z [command]/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager tools
-2262:2026-10-09T11:45:17.5273638Z Warning: Failed to find package 'tools'
-2264:2026-10-09T11:45:17.7378540Z                 error = new Error(`The process '${this.toolPath}' failed with exit code ${this.processExitCode}`);
-2267:2026-10-09T11:45:17.7379735Z Error: The process '/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager' failed with exit code 1
-```
-
-### Tail of logs
-
-```text
-2026-10-09T11:45:16.3478326Z ANY PRE-RELEASE MATERIALS ARE NON-QUALIFIED AND, AS SUCH, ARE PROVIDED “AS IS” AND “AS AVAILABLE”, POSSIBLY WITH FAULTS, AND WITHOUT REPRESENTATION OR WARRANTY OF ANY KIND.
-2026-10-09T11:45:16.3478910Z 
-2026-10-09T11:45:16.3480584Z 10.8 Open Source Software. In the event Open Source software is included with Evaluation Software, such Open Source software is licensed pursuant to the applicable Open Source software license agreement identified in the Open Source software comments in the applicable so
-2026-10-09T11:45:16.3483046Z ---------------------------------------
-2026-10-09T11:45:16.3483298Z Accept? (y/N): All SDK package licenses accepted
-2026-10-09T11:45:16.3483466Z 
-2026-10-09T11:45:16.3483679Z [command]/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager tools
-2026-10-09T11:45:16.9140165Z Loading package information...                                                  
-2026-10-09T11:45:16.9890760Z Loading local repository...                                                     
-2026-10-09T11:45:16.9891908Z [                                       ] 3% Loading local repository...        
-2026-10-09T11:45:16.9962785Z [                                       ] 3% Fetch remote repository...         
-2026-10-09T11:45:17.2566423Z [=                                      ] 3% Fetch remote repository...         
-2026-10-09T11:45:17.3172489Z [=                                      ] 4% Fetch remote repository...         
-2026-10-09T11:45:17.3435643Z [=                                      ] 5% Fetch remote repository...         
-2026-10-09T11:45:17.3860316Z [==                                     ] 5% Fetch remote repository...         
-2026-10-09T11:45:17.4385011Z [==                                     ] 6% Fetch remote repository...         
-2026-10-09T11:45:17.5166573Z [==                                     ] 7% Fetch remote repository...         
-2026-10-09T11:45:17.5185443Z [==                                     ] 7% Computing updates...               
-2026-10-09T11:45:17.5255408Z [===                                    ] 8% Computing updates...               
-2026-10-09T11:45:17.5272400Z [===                                    ] 10% Computing updates...              
-2026-10-09T11:45:17.5273135Z                                                                                 
-2026-10-09T11:45:17.5273638Z Warning: Failed to find package 'tools'
-2026-10-09T11:45:17.7377652Z /home/runner/work/_actions/android-actions/setup-android/v3/dist/index.js:1823
-2026-10-09T11:45:17.7378540Z                 error = new Error(`The process '${this.toolPath}' failed with exit code ${this.processExitCode}`);
-2026-10-09T11:45:17.7379142Z                         ^
-2026-10-09T11:45:17.7379319Z 
-2026-10-09T11:45:17.7379735Z Error: The process '/usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager' failed with exit code 1
-2026-10-09T11:45:17.7380617Z     at ExecState._setResult (/home/runner/work/_actions/android-actions/setup-android/v3/dist/index.js:1823:25)
-2026-10-09T11:45:17.7381556Z     at ExecState.CheckComplete (/home/runner/work/_actions/android-actions/setup-android/v3/dist/index.js:1806:18)
-2026-10-09T11:45:17.7382514Z     at ChildProcess.<anonymous> (/home/runner/work/_actions/android-actions/setup-android/v3/dist/index.js:1700:27)
-2026-10-09T11:45:17.7382963Z     at ChildProcess.emit (node:events:509:28)
-2026-10-09T11:45:17.7383231Z     at maybeClose (node:internal/child_process:1141:16)
-2026-10-09T11:45:17.7383551Z     at ChildProcess._handle.onexit (node:internal/child_process:306:5)
-2026-10-09T11:45:17.7383769Z 
-2026-10-09T11:45:17.7383844Z Node.js v24.19.0
-2026-10-09T11:45:17.7449475Z [===                                    ] 10% Computing updates...              
-﻿2026-10-09T11:45:17.7709531Z Post job cleanup.
-2026-10-09T11:45:17.8833548Z (node:2293) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-2026-10-09T11:45:17.8834490Z (Use `node --trace-deprecation ...` to show where the warning was created)
-﻿2026-10-09T11:45:17.9887609Z Post job cleanup.
-2026-10-09T11:45:18.0655352Z [command]/usr/bin/git version
-2026-10-09T11:45:18.0677889Z git version 2.55.0
-2026-10-09T11:45:18.0710241Z Temporarily overriding HOME='/home/runner/work/_temp/d33378f6-9796-4e04-8df1-8876ab22f38d' before making global git config changes
-2026-10-09T11:45:18.0711400Z Adding repository directory to the temporary git global config as a safe directory
-2026-10-09T11:45:18.0714703Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
-2026-10-09T11:45:18.1042359Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-10-09T11:45:18.1078213Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-10-09T11:45:18.1336294Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-10-09T11:45:18.1352508Z http.https://github.com/.extraheader
-2026-10-09T11:45:18.1367043Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-2026-10-09T11:45:18.2080100Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-10-09T11:45:18.2291734Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-10-09T11:45:18.2321831Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-﻿2026-10-09T11:45:18.2719955Z Cleaning up orphan processes
-2026-10-09T11:45:18.2968652Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, android-actions/setup-android@v3. For more information see: https://github.blog/changelog/2025-09-19-deprec
 ```
