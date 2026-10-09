@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.util.Base64;
 import android.util.Log;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -72,8 +73,15 @@ public final class PlaybackService extends Service {
         if (file.exists() && file.length() > 0) return file;
         // GitHub stores the short audio as a text asset; decode it on first play.
         byte[] encoded;
-        try (InputStream input = getAssets().open("voice.b64")) {
-            encoded = input.readAllBytes();
+        // InputStream.readAllBytes() is unavailable on older Android versions.
+        try (InputStream input = getAssets().open("voice.b64");
+             ByteArrayOutputStream buffer = new ByteArrayOutputStream()) {
+            byte[] chunk = new byte[8192];
+            int count;
+            while ((count = input.read(chunk)) != -1) {
+                buffer.write(chunk, 0, count);
+            }
+            encoded = buffer.toByteArray();
         }
         byte[] audio = Base64.decode(encoded, Base64.DEFAULT);
         try (FileOutputStream output = new FileOutputStream(file)) {
