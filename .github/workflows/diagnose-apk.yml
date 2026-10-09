@@ -1,0 +1,49 @@
+name: Diagnose Android APK Build
+on:
+  push:
+    paths:
+      - '.github/workflows/diagnose-apk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect recent failed APK build errors into repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -eu
+          printf '# APK build error report\n\n' > BUILD_DIAGNOSTICS.md
+          gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/build-apk.yml/runs?per_page=5" > /tmp/naye-runs.json
+          jq -r '.workflow_runs[] | select(.conclusion == "failure") | .id' /tmp/naye-runs.json | head -3 > /tmp/naye-run-ids.txt
+          while read -r id; do
+            [ -n "$id" ] || continue
+            printf '\n## Run ID: %s\n\n' "$id" >> BUILD_DIAGNOSTICS.md
+            if curl --location --fail --silent --show-error \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs/${id}/logs" \
+              -o /tmp/naye-build-logs.zip; then
+              unzip -p /tmp/naye-build-logs.zip > /tmp/naye-build.log || true
+              printf '\x60\x60\x60text\n' >> BUILD_DIAGNOSTICS.md
+              grep -Ein 'Error|Failed|FAILURE|What went wrong|Could not|denied|Exception|not found|sdkmanager|Unrecognized|Required' /tmp/naye-build.log | tail -n 100 | cut -c 1-300 >> BUILD_DIAGNOSTICS.md || true
+              printf '\x60\x60\x60\n' >> BUILD_DIAGNOSTICS.md
+              printf '\n### Tail of logs\n\n\x60\x60\x60text\n' >> BUILD_DIAGNOSTICS.md
+              tail -n 55 /tmp/naye-build.log | cut -c 1-300 >> BUILD_DIAGNOSTICS.md || true
+              printf '\x60\x60\x60\n' >> BUILD_DIAGNOSTICS.md
+            else
+              printf 'Could not download logs for run %s.\n' "$id" >> BUILD_DIAGNOSTICS.md
+            fi
+          done < /tmp/naye-run-ids.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add BUILD_DIAGNOSTICS.md
+          git commit -m "chore: save build error report [skip ci]" || true
+          git push
