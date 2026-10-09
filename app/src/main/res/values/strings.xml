@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">나예 사랑해</string>
+    <string name="widget_description">누르면 나예 사랑해 음성이 재생되는 1×1 하트</string>
+</resources>
