@@ -18,8 +18,8 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Android SDK
-        uses: android-actions/setup-android@v3
+      # The hosted Ubuntu runner already includes Android SDK command-line tools.
+      # setup-android@v3 fails here while trying to install obsolete package 'tools'.
       - name: Install platform
         run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
       - name: Gradle 8.9
