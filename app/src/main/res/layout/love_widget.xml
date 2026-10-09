@@ -4,30 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/love_widget_background"
+    android:clipToOutline="true"
     android:contentDescription="나예 사랑해 음성 재생"
     android:clickable="true">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/widget_photo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/widget_photo"
+        android:contentDescription="나예 사진 위젯" />
+
+    <TextView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="4dp"
+        android:background="@drawable/widget_badge"
         android:gravity="center"
-        android:orientation="vertical"
-        android:padding="3dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="♥"
-            android:textColor="#FFFFFFFF"
-            android:textSize="29sp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:singleLine="true"
-            android:text="나예"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:text="♥"
+        android:textColor="#FFFFFFFF"
+        android:textSize="10sp" />
 </FrameLayout>
