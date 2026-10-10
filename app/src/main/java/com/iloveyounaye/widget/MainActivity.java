@@ -12,6 +12,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -69,12 +70,12 @@ public final class MainActivity extends Activity {
         root.addView(instructions, infoLp);
 
         cropPreview = new CropPreview(this);
-        cropPreview.setBackground(makeBackground(0xffffe4ef));
+        cropPreview.setAspectRatio(getLauncherWidgetAspect());
         cropPreview.setPhoto(LoveWidgetProvider.getSavedOrDefaultPhoto(this));
         root.addView(cropPreview, new LinearLayout.LayoutParams(-1,-2));
 
         TextView caption = new TextView(this);
-        caption.setText("사진 비율 그대로 표시돼요 · 위젯 칸에 따라 여백이 생길 수 있어요");
+        caption.setText("이 둥근 틀에 표시되는 영역이 위젯에 적용돼요. 사진이 빈틈없이 채워져요.");
         caption.setTextSize(12);
         caption.setTextColor(0xff917987);
         caption.setGravity(Gravity.CENTER);
@@ -208,75 +209,164 @@ public final class MainActivity extends Activity {
     }
     private int dp(int value) {return (int)(getResources().getDisplayMetrics().density*value+0.5f);}
 
-    /** Interactive square. The same rendering is used for the preview and saved home widget. */
+
+    @Override protected void onResume() {
+        super.onResume();
+        if (cropPreview != null) cropPreview.setAspectRatio(getLauncherWidgetAspect());
+    }
+
+    /**
+     * Prefer the actual installed 1x1 widget proportions reported by the launcher.
+     * Before the first widget is added, use the rounded portrait-shaped ratio
+     * observed for Samsung 1x1 widgets.
+     */
+    private float getLauncherWidgetAspect() {
+        float ratio = 0.86f;
+        try {
+            AppWidgetManager manager = AppWidgetManager.getInstance(this);
+            int[] ids = manager.getAppWidgetIds(new ComponentName(this, LoveWidgetProvider.class));
+            if (ids.length > 0) {
+                Bundle options = manager.getAppWidgetOptions(ids[0]);
+                int w = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH, 0);
+                int h = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT, 0);
+                if (w > 20 && h > 20) ratio = Math.max(0.65f, Math.min(1.35f, (float) w / h));
+            }
+        } catch (Exception ignored) { }
+        return ratio;
+    }
+
+    /**
+     * The editor and saved bitmap share one cover-crop algorithm:
+     * no letterboxing, no image stretching, no empty margins.
+     */
     private static final class CropPreview extends View {
         private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
         private final ScaleGestureDetector scaleDetector;
         private Bitmap bitmap;
         private float zoom = 1f;
-        private float panX=0f,panY=0f;
-        private float lastX,lastY;
-        private boolean dragging;
+        private float panX = 0f, panY = 0f;
+        private float aspectRatio = 0.86f;
+        private float lastX, lastY;
+
         CropPreview(Activity context) {
             super(context);
-            scaleDetector = new ScaleGestureDetector(context,new ScaleGestureDetector.SimpleOnScaleGestureListener() {
+            scaleDetector = new ScaleGestureDetector(context, new ScaleGestureDetector.SimpleOnScaleGestureListener() {
                 @Override public boolean onScale(ScaleGestureDetector detector) {
-                    zoom = Math.max(0.55f,Math.min(6f,zoom*detector.getScaleFactor()));
+                    zoom = Math.max(1f, Math.min(8f, zoom * detector.getScaleFactor()));
                     invalidate();
                     return true;
                 }
             });
-            setLayerType(View.LAYER_TYPE_SOFTWARE,null);
         }
-        void setPhoto(Bitmap newPhoto) {bitmap=newPhoto; zoom=1f; panX=0;panY=0;invalidate();}
-        Bitmap getPhoto() {return bitmap;}
-        @Override protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec) {
-            int width=MeasureSpec.getSize(widthMeasureSpec);
-            setMeasuredDimension(width,width);
+
+        void setAspectRatio(float aspect) {
+            float newAspect = Math.max(0.65f, Math.min(1.35f, aspect));
+            if (Math.abs(aspectRatio - newAspect) > 0.002f) {
+                aspectRatio = newAspect;
+                requestLayout();
+                invalidate();
+            }
         }
-        @Override protected void onDraw(Canvas canvas) { super.onDraw(canvas);drawArt(canvas,getWidth(),getHeight()); }
-        private void drawArt(Canvas canvas,int width,int height) {
+
+        void setPhoto(Bitmap photo) {
+            bitmap = photo;
+            zoom = 1f;
+            panX = panY = 0f;
+            invalidate();
+        }
+
+        Bitmap getPhoto() { return bitmap; }
+
+        @Override protected void onMeasure(int widthSpec, int heightSpec) {
+            int w = MeasureSpec.getSize(widthSpec);
+            if (w < 1) w = 1;
+            int h = Math.max(1, Math.round(w / aspectRatio));
+            setMeasuredDimension(w, h);
+        }
+
+        @Override protected void onDraw(Canvas canvas) {
+            super.onDraw(canvas);
+            int w = getWidth(), h = getHeight();
+            if (w <= 0 || h <= 0) return;
+            int save = canvas.save();
+            Path clipping = new Path();
+            float cornerRadius = Math.min(w, h) * 0.24f;
+            clipping.addRoundRect(0, 0, w, h, cornerRadius, cornerRadius, Path.Direction.CW);
+            canvas.clipPath(clipping);
+            drawArt(canvas, w, h);
+            canvas.restoreToCount(save);
+        }
+
+        private void drawArt(Canvas canvas, int w, int h) {
             canvas.drawColor(0xfff6e5ef);
-            if(bitmap==null)return;
-            float bw=bitmap.getWidth(),bh=bitmap.getHeight();
-            float cover=Math.max(width/bw,height/bh);
-            float backgroundW=bw*cover,backgroundH=bh*cover;
-            RectF background = new RectF((width-backgroundW)/2f,(height-backgroundH)/2f,(width+backgroundW)/2f,(height+backgroundH)/2f);
-            paint.setAlpha(62);
-            canvas.drawBitmap(bitmap,null,background,paint);
+            if (bitmap == null) return;
+            float sourceW = bitmap.getWidth(), sourceH = bitmap.getHeight();
+            // COVER rather than FIT: always fill the available widget shape.
+            float coverScale = Math.max(w / sourceW, h / sourceH) * zoom;
+            float drawnW = sourceW * coverScale, drawnH = sourceH * coverScale;
+            float boundX = Math.max(0f, (drawnW - w) * 0.5f);
+            float boundY = Math.max(0f, (drawnH - h) * 0.5f);
+            float offsetX = Math.max(-boundX, Math.min(boundX, panX * w));
+            float offsetY = Math.max(-boundY, Math.min(boundY, panY * h));
+            float centerX = w * 0.5f + offsetX, centerY = h * 0.5f + offsetY;
             paint.setAlpha(255);
-            float fit=Math.min(width/bw,height/bh);
-            float drawScale=fit*zoom;
-            float outW=bw*drawScale,outH=bh*drawScale;
-            float centerX=width*(0.5f+panX),centerY=height*(0.5f+panY);
-            RectF photoRect=new RectF(centerX-outW/2,centerY-outH/2,centerX+outW/2,centerY+outH/2);
-            canvas.drawBitmap(bitmap,null,photoRect,paint);
+            canvas.drawBitmap(bitmap, null, new RectF(centerX - drawnW*0.5f,
+                centerY - drawnH*0.5f, centerX + drawnW*0.5f,
+                centerY + drawnH*0.5f), paint);
         }
+
         Bitmap renderWidgetBitmap() {
-            Bitmap output = Bitmap.createBitmap(320,320,Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(output);
-            drawArt(canvas,320,320);
-            return output;
+            int outputH = aspectRatio <= 1f ? 640 : Math.round(640f / aspectRatio);
+            int outputW = Math.round(outputH * aspectRatio);
+            Bitmap result = Bitmap.createBitmap(outputW, outputH, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(result);
+            // No transparent padding or baked-in border; widget host handles rounded corners.
+            drawArt(canvas, outputW, outputH);
+            return result;
         }
-        @Override public boolean onTouchEvent(MotionEvent e) {
-            if (bitmap==null) return true;
+
+        @Override public boolean onTouchEvent(MotionEvent event) {
+            if (bitmap == null) return true;
             getParent().requestDisallowInterceptTouchEvent(true);
-            scaleDetector.onTouchEvent(e);
-            switch(e.getActionMasked()) {
+            scaleDetector.onTouchEvent(event);
+            switch (event.getActionMasked()) {
                 case MotionEvent.ACTION_DOWN:
-                    lastX=e.getX();lastY=e.getY();dragging=true;return true;
-                case MotionEvent.ACTION_POINTER_DOWN: dragging=false;return true;
-                case MotionEvent.ACTION_POINTER_UP: dragging=false;return true;
+                    lastX = event.getX();
+                    lastY = event.getY();
+                    return true;
+                case MotionEvent.ACTION_POINTER_DOWN:
+                    lastX = event.getX();
+                    lastY = event.getY();
+                    return true;
                 case MotionEvent.ACTION_MOVE:
-                    if(e.getPointerCount()==1 && dragging && getWidth()>0) {
-                        panX=Math.max(-1f,Math.min(1f,panX+(e.getX()-lastX)/getWidth()));
-                        panY=Math.max(-1f,Math.min(1f,panY+(e.getY()-lastY)/getHeight()));
+                    if (event.getPointerCount() == 1 && !scaleDetector.isInProgress()
+                            && getWidth() > 0 && getHeight() > 0) {
+                        panX += (event.getX() - lastX) / getWidth();
+                        panY += (event.getY() - lastY) / getHeight();
+                        panX = Math.max(-8f, Math.min(8f, panX));
+                        panY = Math.max(-8f, Math.min(8f, panY));
                         invalidate();
                     }
-                    lastX=e.getX();lastY=e.getY();return true;
+                    lastX = event.getX();
+                    lastY = event.getY();
+                    return true;
+                case MotionEvent.ACTION_POINTER_UP:
+                    if (event.getPointerCount() > 1) {
+                        int index = event.getActionIndex() == 0 ? 1 : 0;
+                        lastX = event.getX(index);
+                        lastY = event.getY(index);
+                    }
+                    return true;
                 case MotionEvent.ACTION_UP:
-                case MotionEvent.ACTION_CANCEL: dragging=false;return true;
+                case MotionEvent.ACTION_CANCEL:
+                    performClick();
+                    return true;
             }
+            return true;
+        }
+
+        @Override public boolean performClick() {
+            super.performClick();
             return true;
         }
     }
