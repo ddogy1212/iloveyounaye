@@ -1,228 +1,167 @@
 # APK build error report
 
-38035852067	completed	success
-37933929937	completed	success
-37932757221	completed	success
+38038836154	in_progress	
+38038825488	completed	success
+38038815601	completed	success
 
-## Run ID: 38035852067
+## Run ID: 38038836154
+
+Could not download logs for run 38038836154.
+
+## Run ID: 38038825488
 
 ```text
-29:2026-10-10T07:51:20.1312491Z Prepare all required actions
-149:2026-10-10T07:51:23.1272761Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
-151:2026-10-10T07:51:23.1273563Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
-154:2026-10-10T07:51:23.1274914Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
-190:2026-10-10T07:51:23.2486413Z   dependency-graph-continue-on-failure: true
-349:2026-10-10T07:51:55.3364323Z (node:2583) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
-415:2026-10-10T07:52:07.2273863Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
-548:2026-10-10T07:51:20.1312469Z Prepare all required actions
-668:2026-10-10T07:51:23.1272757Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
-670:2026-10-10T07:51:23.1273529Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
-673:2026-10-10T07:51:23.1274906Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
-709:2026-10-10T07:51:23.2486410Z   dependency-graph-continue-on-failure: true
-868:2026-10-10T07:51:55.3364273Z (node:2583) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
-934:2026-10-10T07:52:07.2273793Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
+29:2026-10-10T08:42:43.3376017Z Prepare all required actions
+149:2026-10-10T08:42:45.8386340Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
+151:2026-10-10T08:42:45.8388885Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
+154:2026-10-10T08:42:45.8392858Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
+190:2026-10-10T08:42:45.9073440Z   dependency-graph-continue-on-failure: true
+345:2026-10-10T08:43:07.3415409Z (node:2368) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+409:2026-10-10T08:43:14.8795222Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
+542:2026-10-10T08:42:43.3375973Z Prepare all required actions
+662:2026-10-10T08:42:45.8386335Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
+664:2026-10-10T08:42:45.8388811Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
+667:2026-10-10T08:42:45.8392850Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
+703:2026-10-10T08:42:45.9073434Z   dependency-graph-continue-on-failure: true
+858:2026-10-10T08:43:07.3415363Z (node:2368) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+922:2026-10-10T08:43:14.8795114Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
 ```
 
 ### Tail of logs
 
 ```text
-2026-10-10T07:52:11.4360950Z groovy-dsl (/home/runner/.gradle/caches/8.11/groovy-dsl) cleanup deleted 2 files/directories.
-2026-10-10T07:52:11.4362418Z groovy-dsl (/home/runner/.gradle/caches/8.11/groovy-dsl) cleaned up in 0.011 secs.
-2026-10-10T07:52:11.4364288Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4366073Z jars (/home/runner/.gradle/caches/jars-9) removing files not accessed on or after Sat Oct 10 07:51:24 UTC 2026.
-2026-10-10T07:52:11.4367175Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 3 files/directories.
-2026-10-10T07:52:11.4368041Z jars (/home/runner/.gradle/caches/jars-9) cleaned up in 0.012 secs.
-2026-10-10T07:52:11.4369285Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) removing files not accessed on or after Sat Oct 10 07:51:24 UTC 2026.
-2026-10-10T07:52:11.4370853Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4372045Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleaned up in 0.0 secs.
-2026-10-10T07:52:11.4372965Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) removing files not accessed on or after Sat Oct 10 07:51:24 UTC 2026.
-2026-10-10T07:52:11.4373995Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4375332Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleaned up in 0.0 secs.
-2026-10-10T07:52:11.4376267Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4377150Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4378346Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] removing files not accessed on or after Sat Oct 10 07:51:24 UTC 2026.
-2026-10-10T07:52:11.4379550Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4380618Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4381772Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] removing files not accessed on or after Sat Oct 10 07:51:24 UTC 2026.
-2026-10-10T07:52:11.4382955Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4384008Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/metadata-2.107] cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4385258Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
-2026-10-10T07:52:11.4385948Z artifact cache (/home/runner/.gradle/caches/modules-2) cleaned up in 0.037 secs.
-2026-10-10T07:52:11.5841662Z ##[endgroup]
-2026-10-10T07:52:11.5842571Z ##[group]Caching Gradle state
-2026-10-10T07:52:11.7588931Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-10T07:52:11.7972102Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-10T07:52:12.7371401Z Sent 99707 of 99707 (100.0%), 0.2 MBs/sec
-2026-10-10T07:52:12.7893798Z Sent 165148 of 165148 (100.0%), 0.3 MBs/sec
-2026-10-10T07:52:13.0130157Z Saved cache entry with key gradle-instrumented-jars-v1-097f066d7e57f12e8479aff9ecbad472 from /home/runner/.gradle/caches/jars-*/*/ in 1279ms
-2026-10-10T07:52:13.0382218Z Saved cache entry with key gradle-groovy-dsl-v1-c89ad4d53713ce44a37f6181bf25661a from /home/runner/.gradle/caches/*/groovy-dsl/*/ in 1274ms
-2026-10-10T07:52:13.0921512Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-10T07:52:13.9935916Z Sent 864161 of 864161 (100.0%), 1.3 MBs/sec
-2026-10-10T07:52:14.2489970Z Saved cache entry with key gradle-home-v1|Linux-X64|apk[e080f0fdc288b6f0c5023fd4b86f7a10]-7643a18a6d05c6e83e51a16750346e73524a0495 from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 1167ms
-2026-10-10T07:52:14.2491984Z ##[endgroup]
-2026-10-10T07:52:14.2497732Z Generating Job Summary
-2026-10-10T07:52:14.2510486Z Completed post-action step
-﻿2026-10-10T07:52:14.2763636Z Post job cleanup.
-2026-10-10T07:52:14.4082638Z (node:2824) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-2026-10-10T07:52:14.4083651Z (Use `node --trace-deprecation ...` to show where the warning was created)
-﻿2026-10-10T07:52:14.4284306Z Post job cleanup.
-2026-10-10T07:52:14.5152659Z [command]/usr/bin/git version
-2026-10-10T07:52:14.5197197Z git version 2.55.0
-2026-10-10T07:52:14.5233972Z Temporarily overriding HOME='/home/runner/work/_temp/6ad813fc-568f-44fe-9335-e7b3f4563efe' before making global git config changes
-2026-10-10T07:52:14.5236046Z Adding repository directory to the temporary git global config as a safe directory
-2026-10-10T07:52:14.5240123Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
-2026-10-10T07:52:14.5285779Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-10-10T07:52:14.5313436Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-10-10T07:52:14.5561395Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-10-10T07:52:14.5587961Z http.https://github.com/.extraheader
-2026-10-10T07:52:14.5601055Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-2026-10-10T07:52:14.5638942Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-10-10T07:52:14.5909306Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-10-10T07:52:14.5949446Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-﻿2026-10-10T07:52:14.6387426Z Cleaning up orphan processes
-2026-10-10T07:52:14.6707353Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4, softprops/action-gh-release@v2. For more inform
+2026-10-10T08:43:18.0808448Z groovy-dsl (/home/runner/.gradle/caches/8.11/groovy-dsl) cleanup deleted 2 files/directories.
+2026-10-10T08:43:18.0809435Z groovy-dsl (/home/runner/.gradle/caches/8.11/groovy-dsl) cleaned up in 0.011 secs.
+2026-10-10T08:43:18.0810312Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.0811566Z jars (/home/runner/.gradle/caches/jars-9) removing files not accessed on or after Sat Oct 10 08:42:47 UTC 2026.
+2026-10-10T08:43:18.0812573Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 2 files/directories.
+2026-10-10T08:43:18.0813390Z jars (/home/runner/.gradle/caches/jars-9) cleaned up in 0.01 secs.
+2026-10-10T08:43:18.0814448Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) removing files not accessed on or after Sat Oct 10 08:42:47 UTC 2026.
+2026-10-10T08:43:18.0815740Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.0816788Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleaned up in 0.0 secs.
+2026-10-10T08:43:18.0817855Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) removing files not accessed on or after Sat Oct 10 08:42:47 UTC 2026.
+2026-10-10T08:43:18.0819030Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.0819679Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleaned up in 0.0 secs.
+2026-10-10T08:43:18.0820235Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.0820901Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.0821783Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] removing files not accessed on or after Sat Oct 10 08:42:47 UTC 2026.
+2026-10-10T08:43:18.0822655Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.0823435Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.0824274Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] removing files not accessed on or after Sat Oct 10 08:42:47 UTC 2026.
+2026-10-10T08:43:18.1176407Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.1179098Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/metadata-2.107] cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.1180628Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
+2026-10-10T08:43:18.1181704Z artifact cache (/home/runner/.gradle/caches/modules-2) cleaned up in 0.029 secs.
+2026-10-10T08:43:18.1979971Z ##[endgroup]
+2026-10-10T08:43:18.1980536Z ##[group]Caching Gradle state
+2026-10-10T08:43:18.3249338Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-10T08:43:18.3565905Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-10T08:43:18.4464095Z Sent 166519 of 166519 (100.0%), 5.7 MBs/sec
+2026-10-10T08:43:18.4568839Z Sent 99132 of 99132 (100.0%), 1.6 MBs/sec
+2026-10-10T08:43:18.6115644Z Saved cache entry with key gradle-groovy-dsl-v1-6ee3d61a268a92d1745d859e68fcbe8b from /home/runner/.gradle/caches/*/groovy-dsl/*/ in 281ms
+2026-10-10T08:43:18.6246819Z Saved cache entry with key gradle-instrumented-jars-v1-2102cabd77165d45395528683ca1ff73 from /home/runner/.gradle/caches/jars-*/*/ in 319ms
+2026-10-10T08:43:18.6383120Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-10T08:43:18.8037252Z Sent 864097 of 864097 (100.0%), 9.5 MBs/sec
+2026-10-10T08:43:18.8785351Z Saved cache entry with key gradle-home-v1|Linux-X64|apk[e080f0fdc288b6f0c5023fd4b86f7a10]-a7a68530d3bcf470e6a5e0c14d520cb819d5c2df from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 249ms
+2026-10-10T08:43:18.8786658Z ##[endgroup]
+2026-10-10T08:43:18.8792429Z Generating Job Summary
+2026-10-10T08:43:18.8803059Z Completed post-action step
+﻿2026-10-10T08:43:18.9004898Z Post job cleanup.
+2026-10-10T08:43:19.0084940Z (node:2607) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-10T08:43:19.0085647Z (Use `node --trace-deprecation ...` to show where the warning was created)
+﻿2026-10-10T08:43:19.0258572Z Post job cleanup.
+2026-10-10T08:43:19.0964269Z [command]/usr/bin/git version
+2026-10-10T08:43:19.0998883Z git version 2.55.0
+2026-10-10T08:43:19.1028007Z Temporarily overriding HOME='/home/runner/work/_temp/25451bf3-d4c4-470e-a47e-3e7ea2f2a202' before making global git config changes
+2026-10-10T08:43:19.1029100Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-10T08:43:19.1032681Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
+2026-10-10T08:43:19.1065853Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T08:43:19.1096258Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T08:43:19.1302531Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T08:43:19.1327154Z http.https://github.com/.extraheader
+2026-10-10T08:43:19.1342944Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-10T08:43:19.1365666Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T08:43:19.1575480Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T08:43:19.1608055Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+﻿2026-10-10T08:43:19.1950807Z Cleaning up orphan processes
+2026-10-10T08:43:19.2193854Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4, softprops/action-gh-release@v2. For more inform
 ```
 
-## Run ID: 37933929937
+## Run ID: 38038815601
 
 ```text
-29:2026-10-09T13:01:26.3961076Z Prepare all required actions
-149:2026-10-09T13:01:30.5973082Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
-151:2026-10-09T13:01:30.5973812Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
-154:2026-10-09T13:01:30.5974747Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
-190:2026-10-09T13:01:30.6940659Z   dependency-graph-continue-on-failure: true
-348:2026-10-09T13:02:03.5293324Z (node:2547) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
-413:2026-10-09T13:02:13.8873733Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
-```
-
-### Tail of logs
-
-```text
-2026-10-09T13:02:18.6840610Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleaned up in 0.0 secs.
-2026-10-09T13:02:18.6842404Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) removing files not accessed on or after Fri Oct 09 13:01:32 UTC 2026.
-2026-10-09T13:02:18.6844287Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6846086Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleaned up in 0.0 secs.
-2026-10-09T13:02:18.6847672Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6849429Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6851805Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] removing files not accessed on or after Fri Oct 09 13:01:32 UTC 2026.
-2026-10-09T13:02:18.6854108Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6856935Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6859241Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] removing files not accessed on or after Fri Oct 09 13:01:32 UTC 2026.
-2026-10-09T13:02:18.6861424Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6863436Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/metadata-2.107] cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6865392Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
-2026-10-09T13:02:18.6866572Z artifact cache (/home/runner/.gradle/caches/modules-2) cleaned up in 0.031 secs.
-2026-10-09T13:02:18.7601098Z ##[endgroup]
-2026-10-09T13:02:18.7601652Z ##[group]Caching Gradle state
-2026-10-09T13:02:18.9400545Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-09T13:02:18.9834484Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-09T13:02:19.7869494Z Sent 99634 of 99634 (100.0%), 0.4 MBs/sec
-2026-10-09T13:02:19.8200326Z Sent 162781 of 162781 (100.0%), 0.6 MBs/sec
-2026-10-09T13:02:19.9773005Z Saved cache entry with key gradle-instrumented-jars-v1-1b8dbcc50017c037f5bddec2313a3d20 from /home/runner/.gradle/caches/jars-*/*/ in 1064ms
-2026-10-09T13:02:20.0070584Z Saved cache entry with key gradle-groovy-dsl-v1-7431745c1d49acef815cbd7928a26a25 from /home/runner/.gradle/caches/*/groovy-dsl/*/ in 1059ms
-2026-10-09T13:02:20.0812461Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-09T13:02:20.5877474Z Sent 863291 of 863291 (100.0%), 2.7 MBs/sec
-2026-10-09T13:02:20.7540853Z Saved cache entry with key gradle-home-v1|Linux-X64|apk[e080f0fdc288b6f0c5023fd4b86f7a10]-83b43dc0b0ff58f555880e4c2fe3953e5f92c89d from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 686ms
-2026-10-09T13:02:20.7542478Z ##[endgroup]
-2026-10-09T13:02:20.7549727Z Generating Job Summary
-2026-10-09T13:02:20.7563154Z Completed post-action step
-2026-10-09T13:02:20.7809680Z Post job cleanup.
-2026-10-09T13:02:20.9219526Z (node:2787) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-2026-10-09T13:02:20.9220528Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-10-09T13:02:20.9403392Z Post job cleanup.
-2026-10-09T13:02:21.0381730Z [command]/usr/bin/git version
-2026-10-09T13:02:21.0432685Z git version 2.55.0
-2026-10-09T13:02:21.0506617Z Temporarily overriding HOME='/home/runner/work/_temp/1bbca2fa-45bf-4d92-a94d-2ff79907393a' before making global git config changes
-2026-10-09T13:02:21.0508172Z Adding repository directory to the temporary git global config as a safe directory
-2026-10-09T13:02:21.0513549Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
-2026-10-09T13:02:21.0561515Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-10-09T13:02:21.0604040Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-10-09T13:02:21.0881038Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-10-09T13:02:21.0915780Z http.https://github.com/.extraheader
-2026-10-09T13:02:21.0935028Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-2026-10-09T13:02:21.0970444Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-10-09T13:02:21.1231965Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-10-09T13:02:21.1280681Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-10-09T13:02:21.1701413Z Cleaning up orphan processes
-2026-10-09T13:02:21.2000485Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4, softprops/action-gh-release@v2. For more inform
-2026-10-09T13:01:23.7670000Z Evaluating apk.if
-2026-10-09T13:01:23.7670000Z Evaluating: success()
-2026-10-09T13:01:23.7670000Z Result: true
-2026-10-09T13:01:23.9360000Z Job is waiting for a hosted runner to come online.
-2026-10-09T13:01:23.9350000Z Job is about to start running on the hosted runner: GitHub Actions 1000000966
-2026-10-09T13:01:23.9340000Z Requested labels: ubuntu-latest
-2026-10-09T13:01:23.9340000Z Job defined at: ddogy1212/iloveyounaye/.github/workflows/build-apk.yml@refs/heads/main
-2026-10-09T13:01:23.9340000Z Waiting for a runner to pick up this job...
-```
-
-## Run ID: 37932757221
-
-```text
-29:2026-10-09T12:51:06.3148170Z Prepare all required actions
-149:2026-10-09T12:51:09.0819123Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
-151:2026-10-09T12:51:09.0820441Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
-154:2026-10-09T12:51:09.0822201Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
-190:2026-10-09T12:51:09.1477476Z   dependency-graph-continue-on-failure: true
-345:2026-10-09T12:51:36.7957913Z (node:2597) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
-409:2026-10-09T12:51:45.5468126Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
+29:2026-10-10T08:42:34.0005111Z Prepare all required actions
+149:2026-10-10T08:42:39.6544632Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
+151:2026-10-10T08:42:39.6545564Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
+154:2026-10-10T08:42:39.6546670Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
+190:2026-10-10T08:42:39.7073655Z   dependency-graph-continue-on-failure: true
+348:2026-10-10T08:43:04.7123045Z (node:2494) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+414:2026-10-10T08:43:13.1427024Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
+547:2026-10-10T08:42:34.0005075Z Prepare all required actions
+667:2026-10-10T08:42:39.6544628Z [36;1m  SDKMGR="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"[0m
+669:2026-10-10T08:42:39.6545430Z [36;1m    SDKMGR="$SDK_DIR/cmdline-tools/16.0/bin/sdkmanager"[0m
+672:2026-10-10T08:42:39.6546665Z [36;1m    echo "::error::Android SDK manager missing from $SDK_DIR/cmdline-tools"[0m
+708:2026-10-10T08:42:39.7073651Z   dependency-graph-continue-on-failure: true
+866:2026-10-10T08:43:04.7122963Z (node:2494) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+932:2026-10-10T08:43:13.1426953Z Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.u
 ```
 
 ### Tail of logs
 
 ```text
-2026-10-09T12:51:49.7488862Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleaned up in 0.0 secs.
-2026-10-09T12:51:49.7490615Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) removing files not accessed on or after Fri Oct 09 12:51:09 UTC 2026.
-2026-10-09T12:51:49.7492692Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7494327Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleaned up in 0.0 secs.
-2026-10-09T12:51:49.7495760Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7497483Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7499743Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] removing files not accessed on or after Fri Oct 09 12:51:09 UTC 2026.
-2026-10-09T12:51:49.7502005Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7504327Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7506565Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] removing files not accessed on or after Fri Oct 09 12:51:09 UTC 2026.
-2026-10-09T12:51:49.7766524Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7783931Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/metadata-2.107] cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7793850Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
-2026-10-09T12:51:49.7803903Z artifact cache (/home/runner/.gradle/caches/modules-2) cleaned up in 0.045 secs.
-2026-10-09T12:51:49.8966577Z ##[endgroup]
-2026-10-09T12:51:49.8967104Z ##[group]Caching Gradle state
-2026-10-09T12:51:50.0787865Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-09T12:51:50.1165099Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-09T12:51:50.2276943Z Sent 99467 of 99467 (100.0%), 2.4 MBs/sec
-2026-10-09T12:51:50.2397524Z Sent 161693 of 161693 (100.0%), 5.7 MBs/sec
-2026-10-09T12:51:50.6037789Z Saved cache entry with key gradle-instrumented-jars-v1-77cb8bc0ad538db4f3d8a0a8af81655c from /home/runner/.gradle/caches/jars-*/*/ in 550ms
-2026-10-09T12:51:50.6217448Z Saved cache entry with key gradle-groovy-dsl-v1-6ecc6e1b0dac4630a57806bc98af82c7 from /home/runner/.gradle/caches/*/groovy-dsl/*/ in 537ms
-2026-10-09T12:51:50.6703110Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
-2026-10-09T12:51:50.8165382Z Sent 861276 of 861276 (100.0%), 17.5 MBs/sec
-2026-10-09T12:51:50.9051462Z Saved cache entry with key gradle-home-v1|Linux-X64|apk[e080f0fdc288b6f0c5023fd4b86f7a10]-db98aca526444bd5883a0799a63f5f8242a780cd from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 245ms
-2026-10-09T12:51:50.9053483Z ##[endgroup]
-2026-10-09T12:51:50.9059082Z Generating Job Summary
-2026-10-09T12:51:50.9072717Z Completed post-action step
-2026-10-09T12:51:50.9307335Z Post job cleanup.
-2026-10-09T12:51:51.0646260Z (node:2835) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-2026-10-09T12:51:51.0647469Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-10-09T12:51:51.0869563Z Post job cleanup.
-2026-10-09T12:51:51.1782142Z [command]/usr/bin/git version
-2026-10-09T12:51:51.1828591Z git version 2.55.0
-2026-10-09T12:51:51.1872463Z Temporarily overriding HOME='/home/runner/work/_temp/423753e4-1f6b-4b6b-ab21-f9a8a6046445' before making global git config changes
-2026-10-09T12:51:51.1874054Z Adding repository directory to the temporary git global config as a safe directory
-2026-10-09T12:51:51.1879608Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
-2026-10-09T12:51:51.1918096Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-10-09T12:51:51.1953834Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-10-09T12:51:51.2200911Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-10-09T12:51:51.2234794Z http.https://github.com/.extraheader
-2026-10-09T12:51:51.2252901Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-2026-10-09T12:51:51.2301724Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-10-09T12:51:51.2645719Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-10-09T12:51:51.2696684Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-10-09T12:51:51.3150496Z Cleaning up orphan processes
-2026-10-09T12:51:51.3449168Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4, softprops/action-gh-release@v2. For more inform
-2026-10-09T12:51:04.3910000Z Evaluating apk.if
-2026-10-09T12:51:04.3910000Z Evaluating: success()
-2026-10-09T12:51:04.3910000Z Result: true
-2026-10-09T12:51:04.3960000Z Job is about to start running on the hosted runner: GitHub Actions 1000000964
-2026-10-09T12:51:04.3910000Z Requested labels: ubuntu-latest
-2026-10-09T12:51:04.3910000Z Job defined at: ddogy1212/iloveyounaye/.github/workflows/build-apk.yml@refs/heads/main
-2026-10-09T12:51:04.3910000Z Waiting for a runner to pick up this job...
-2026-10-09T12:51:04.3960000Z Job is waiting for a hosted runner to come online.
+2026-10-10T08:43:16.9496547Z groovy-dsl (/home/runner/.gradle/caches/8.11/groovy-dsl) cleanup deleted 2 files/directories.
+2026-10-10T08:43:16.9497829Z groovy-dsl (/home/runner/.gradle/caches/8.11/groovy-dsl) cleaned up in 0.009 secs.
+2026-10-10T08:43:16.9499886Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9501222Z jars (/home/runner/.gradle/caches/jars-9) removing files not accessed on or after Sat Oct 10 08:42:40 UTC 2026.
+2026-10-10T08:43:16.9502579Z jars (/home/runner/.gradle/caches/jars-9) cleanup deleted 2 files/directories.
+2026-10-10T08:43:16.9503694Z jars (/home/runner/.gradle/caches/jars-9) cleaned up in 0.007 secs.
+2026-10-10T08:43:16.9505189Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) removing files not accessed on or after Sat Oct 10 08:42:40 UTC 2026.
+2026-10-10T08:43:16.9506982Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9509032Z Artifact transforms cache (/home/runner/.gradle/caches/8.11/transforms) cleaned up in 0.0 secs.
+2026-10-10T08:43:16.9510826Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) removing files not accessed on or after Sat Oct 10 08:42:40 UTC 2026.
+2026-10-10T08:43:16.9512982Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9514695Z dependencies-accessors (/home/runner/.gradle/caches/8.11/dependencies-accessors) cleaned up in 0.0 secs.
+2026-10-10T08:43:16.9516123Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9517845Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9520235Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] removing files not accessed on or after Sat Oct 10 08:42:40 UTC 2026.
+2026-10-10T08:43:16.9522478Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/resources-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9524647Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9527393Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] removing files not accessed on or after Sat Oct 10 08:42:40 UTC 2026.
+2026-10-10T08:43:16.9953363Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/files-2.1] cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9960020Z artifact cache (/home/runner/.gradle/caches/modules-2) [subdir: /home/runner/.gradle/caches/modules-2/metadata-2.107] cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9989889Z artifact cache (/home/runner/.gradle/caches/modules-2) cleanup deleted 0 files/directories.
+2026-10-10T08:43:16.9991074Z artifact cache (/home/runner/.gradle/caches/modules-2) cleaned up in 0.051 secs.
+2026-10-10T08:43:17.0756320Z ##[endgroup]
+2026-10-10T08:43:17.0757084Z ##[group]Caching Gradle state
+2026-10-10T08:43:17.2011144Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-10T08:43:17.2333498Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-10T08:43:17.8392184Z Sent 98942 of 98942 (100.0%), 0.3 MBs/sec
+2026-10-10T08:43:17.9593674Z Sent 166069 of 166069 (100.0%), 0.4 MBs/sec
+2026-10-10T08:43:18.0846006Z Saved cache entry with key gradle-instrumented-jars-v1-63cb12b177a3a446868ef53cdae696e7 from /home/runner/.gradle/caches/jars-*/*/ in 904ms
+2026-10-10T08:43:18.1747656Z Saved cache entry with key gradle-groovy-dsl-v1-b3ffc4823782133d3b34f50cec017ffe from /home/runner/.gradle/caches/*/groovy-dsl/*/ in 968ms
+2026-10-10T08:43:18.2083016Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/iloveyounaye/iloveyounaye --files-from manifest.txt --use-compress-program zstdmt
+2026-10-10T08:43:18.9362573Z Sent 864396 of 864396 (100.0%), 1.7 MBs/sec
+2026-10-10T08:43:19.1524008Z Saved cache entry with key gradle-home-v1|Linux-X64|apk[e080f0fdc288b6f0c5023fd4b86f7a10]-0f5664998118d0b7305c25768ef8c88645335bdc from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 952ms
+2026-10-10T08:43:19.1525488Z ##[endgroup]
+2026-10-10T08:43:19.1533083Z Generating Job Summary
+2026-10-10T08:43:19.1547706Z Completed post-action step
+﻿2026-10-10T08:43:19.1723599Z Post job cleanup.
+2026-10-10T08:43:19.3072743Z (node:2738) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-10T08:43:19.3074063Z (Use `node --trace-deprecation ...` to show where the warning was created)
+﻿2026-10-10T08:43:19.3229736Z Post job cleanup.
+2026-10-10T08:43:19.4114699Z [command]/usr/bin/git version
+2026-10-10T08:43:19.4152367Z git version 2.55.0
+2026-10-10T08:43:19.4187136Z Temporarily overriding HOME='/home/runner/work/_temp/f2a5a156-856d-4b86-99d9-4ee51cb3398e' before making global git config changes
+2026-10-10T08:43:19.4188961Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-10T08:43:19.4199348Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/iloveyounaye/iloveyounaye
+2026-10-10T08:43:19.4229416Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T08:43:19.4262662Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T08:43:19.4453366Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T08:43:19.4479939Z http.https://github.com/.extraheader
+2026-10-10T08:43:19.4491184Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-10T08:43:19.4523203Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T08:43:19.4722782Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T08:43:19.4755130Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+﻿2026-10-10T08:43:19.5128690Z Cleaning up orphan processes
+2026-10-10T08:43:19.5383613Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4, softprops/action-gh-release@v2. For more inform
 ```
