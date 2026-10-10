@@ -74,7 +74,7 @@ public final class MainActivity extends Activity {
         root.addView(cropPreview, new LinearLayout.LayoutParams(-1,-2));
 
         TextView caption = new TextView(this);
-        caption.setText("위 정사각형 그대로 홈 화면에 표시돼요");
+        caption.setText("사진 비율 그대로 표시돼요 · 위젯 칸에 따라 여백이 생길 수 있어요");
         caption.setTextSize(12);
         caption.setTextColor(0xff917987);
         caption.setGravity(Gravity.CENTER);
