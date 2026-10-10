@@ -6,12 +6,14 @@
     android:background="@drawable/love_widget_background"
     android:clipToOutline="true"
     android:clickable="true"
-    android:contentDescription="음성위젯 음성 재생">
+    android:contentDescription="음성위젯을 누르면 음성 재생">
     <ImageView
         android:id="@+id/widget_photo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:adjustViewBounds="false"
         android:scaleType="centerCrop"
-        android:contentDescription="설정한 음성위젯 사진"
+        android:contentDescription="선택한 사진"
         android:src="@drawable/widget_photo" />
 </FrameLayout>
