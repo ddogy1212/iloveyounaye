@@ -5,25 +5,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/love_widget_background"
     android:clipToOutline="true"
-    android:contentDescription="음성위젯 재생"
-    android:clickable="true">
-
+    android:clickable="true"
+    android:contentDescription="음성위젯 음성 재생">
     <ImageView
         android:id="@+id/widget_photo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/widget_photo"
-        android:contentDescription="나예 사진 위젯" />
-
-    <TextView
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="4dp"
-        android:background="@drawable/widget_badge"
-        android:gravity="center"
-        android:text="♥"
-        android:textColor="#FFFFFFFF"
-        android:textSize="10sp" />
+        android:scaleType="fitXY"
+        android:contentDescription="설정한 음성위젯 사진"
+        android:src="@drawable/widget_photo" />
 </FrameLayout>
