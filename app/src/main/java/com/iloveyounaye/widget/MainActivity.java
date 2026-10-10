@@ -316,7 +316,7 @@ public final class MainActivity extends Activity {
         }
 
         Bitmap renderWidgetBitmap() {
-            int outputH = aspectRatio <= 1f ? 640 : Math.round(640f / aspectRatio);
+            int outputH = aspectRatio <= 1f ? 360 : Math.round(360f / aspectRatio);
             int outputW = Math.round(outputH * aspectRatio);
             Bitmap result = Bitmap.createBitmap(outputW, outputH, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(result);
