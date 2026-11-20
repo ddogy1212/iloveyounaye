@@ -157,7 +157,7 @@ public final class MainActivity extends Activity {
         });
 
         TextView sequenceInfo=new TextView(this);
-        sequenceInfo.setText("위젯 터치: 원래 음성 → 새 음성 → 원래 음성 → 반복\\n두 번째 음성은 휴대전화에만 저장되고 GitHub로 업로드되지 않아요.");
+        sequenceInfo.setText("위젯 터치: 원래 음성 → 새 음성 → 원래 음성 → 반복\n두 번째 음성은 휴대전화에만 저장되고 GitHub로 업로드되지 않아요.");
         sequenceInfo.setTextColor(0xff72586c);
         sequenceInfo.setTextSize(13);
         sequenceInfo.setGravity(Gravity.CENTER);
@@ -217,7 +217,7 @@ public final class MainActivity extends Activity {
         boolean ready=PlaybackService.hasSecondaryVoice(this);
         if(audioState!=null)audioState.setText(ready ?
             "✓ 두 번째 음성 등록됨 · 첫 터치부터 원래 음성 재생" :
-            "두 번째 음성 없음 · 아래 버튼에서 합친 M4A 파일을 선택해 주세요");
+            "두 번째 음성 없음 · 위 버튼에서 합친 M4A 파일을 선택해 주세요");
         if(extraPreview!=null)extraPreview.setEnabled(ready);
     }
     private int dp(float d){return Math.round(d*getResources().getDisplayMetrics().density);}
