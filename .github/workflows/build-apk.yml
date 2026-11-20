@@ -55,12 +55,13 @@ jobs:
       - name: Publish on GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v7.0.0-live-frame
-          name: 음성위젯 v7 - 실시간 사진 틀 편집
+          tag_name: v8.0.0-private-alternating-voice
+          name: 음성위젯 v8 - 번갈아 음성 재생
           body: |
-            1x1 홈 화면 사진 음성 위젯. 사진 위에서 둥근 위젯 모양 틀을 보고 확대, 이동할 수 있습니다.
-            드래그 도중 홈 화면 위젯 미리보기 갱신 및 손을 떼면 자동 저장됩니다. 사진 왜곡, 분홍색 여백 없음.
-            Android 8.0+ 별도 설치 앱 ID: com.iloveyounaye.voicewidgetliveframe
+            1x1 사진 음성 위젯. 첫 터치는 원래 음성, 둘째 터치는 사용자가 고른 새 음성, 셋째는 다시 원래 음성을 반복합니다.
+            새 음성은 앱에서 직접 선택해 기기 내부에 저장하므로 공개 GitHub 저장소나 APK에 개인 음성이 포함되지 않습니다.
+            이전 v7 사진 편집/위젯 설정 유지. 동일 앱 ID: com.iloveyounaye.voicewidgetliveframe (versionCode 2).
+            주의: GitHub Actions debug APK는 실행 환경마다 서명이 달라질 수 있어 기존 앱과 서명이 다르면 업데이트 설치에 실패합니다.
           files: app/build/outputs/apk/debug/app-debug.apk
           make_latest: true
           prerelease: false
