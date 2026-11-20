@@ -55,13 +55,13 @@ jobs:
       - name: Publish on GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v8.0.0-private-alternating-voice
-          name: 음성위젯 v8 - 번갈아 음성 재생
+          tag_name: v9.0.0-new-separate-app
+          name: 음성위젯 NEW v9 - 새 앱으로 개별 설치
           body: |
             1x1 사진 음성 위젯. 첫 터치는 원래 음성, 둘째 터치는 사용자가 고른 새 음성, 셋째는 다시 원래 음성을 반복합니다.
             새 음성은 앱에서 직접 선택해 기기 내부에 저장하므로 공개 GitHub 저장소나 APK에 개인 음성이 포함되지 않습니다.
-            이전 v7 사진 편집/위젯 설정 유지. 동일 앱 ID: com.iloveyounaye.voicewidgetliveframe (versionCode 2).
-            주의: GitHub Actions debug APK는 실행 환경마다 서명이 달라질 수 있어 기존 앱과 서명이 다르면 업데이트 설치에 실패합니다.
+            사진 편집 및 1×1 위젯 기능 유지. 새로운 앱 ID: com.iloveyounaye.voicewidgetstandalone2026 (versionCode 1). 기존 앱과 별개로 설치됩니다.
+            사용자는 새 앱에서 두 번째 음성을 선택해야 합니다. 원래 설치된 위젯과 사진은 이전 앱에 그대로 남습니다.
           files: app/build/outputs/apk/debug/app-debug.apk
           make_latest: true
           prerelease: false
