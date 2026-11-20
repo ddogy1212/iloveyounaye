@@ -32,6 +32,8 @@ import java.util.Locale;
 
 public final class MainActivity extends Activity {
     private static final int PHOTO_PICK = 410;
+    private static final int AUDIO_PICK = 411;
+    private static final String SECOND_VOICE_FILE = "voice_secondary.m4a";
     private static final String SOURCE_FILE = "selected_photo_source.jpg";
     private static final String SETTINGS = "crop_settings_v7";
     private final Handler handler = new Handler(Looper.getMainLooper());
@@ -40,6 +42,8 @@ public final class MainActivity extends Activity {
     private boolean ready;
     private SeekBar aspectSlider;
     private TextView aspectLabel;
+    private TextView audioState;
+    private Button extraPreview;
     private final Runnable previewTask = () -> {
         previewPending=false;
         if (editor==null || editor.getPhoto()==null) return;
@@ -152,13 +156,55 @@ public final class MainActivity extends Activity {
             else Toast.makeText(this,"홈 화면을 길게 누른 후 음성위젯을 추가해 주세요",Toast.LENGTH_LONG).show();
         });
 
-        Button play=makeButton("▶ 음성 미리 듣기",0xfff7e5ee,0xffbd3571);
-        LinearLayout.LayoutParams pp=new LinearLayout.LayoutParams(-1,dp(50));pp.setMargins(0,dp(9),0,0);
+        TextView sequenceInfo=new TextView(this);
+        sequenceInfo.setText("위젯 터치: 원래 음성 → 새 음성 → 원래 음성 → 반복\\n두 번째 음성은 휴대전화에만 저장되고 GitHub로 업로드되지 않아요.");
+        sequenceInfo.setTextColor(0xff72586c);
+        sequenceInfo.setTextSize(13);
+        sequenceInfo.setGravity(Gravity.CENTER);
+        LinearLayout.LayoutParams slp=new LinearLayout.LayoutParams(-1,-2);
+        slp.setMargins(0,dp(16),0,dp(8));
+        root.addView(sequenceInfo,slp);
+
+        audioState=new TextView(this);
+        audioState.setTextSize(13);
+        audioState.setTextColor(0xff72586c);
+        audioState.setGravity(Gravity.CENTER);
+        root.addView(audioState,new LinearLayout.LayoutParams(-1,-2));
+
+        Button selectAudio=makeButton("🎵 두 번째 음성 선택하기",0xffe94d8c,Color.WHITE);
+        LinearLayout.LayoutParams alp=new LinearLayout.LayoutParams(-1,dp(52));
+        alp.setMargins(0,dp(10),0,0);
+        root.addView(selectAudio,alp);
+        selectAudio.setOnClickListener(v->{
+            Intent intent=new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            intent.setType("audio/*");
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivityForResult(intent,AUDIO_PICK);
+        });
+
+        Button play=makeButton("▶ 원래 음성 미리 듣기",0xfff7e5ee,0xffbd3571);
+        LinearLayout.LayoutParams pp=new LinearLayout.LayoutParams(-1,dp(50));
+        pp.setMargins(0,dp(9),0,0);
         root.addView(play,pp);
         play.setOnClickListener(v-> {
-            Intent intent=new Intent(this,PlaybackService.class).setAction(PlaybackService.ACTION_PLAY);
+            Intent intent=new Intent(this,PlaybackService.class).setAction(PlaybackService.ACTION_PREVIEW_ORIGINAL);
             startForegroundService(intent);
         });
+
+        extraPreview=makeButton("▶ 새 음성 미리 듣기",0xfff7e5ee,0xffbd3571);
+        LinearLayout.LayoutParams ep=new LinearLayout.LayoutParams(-1,dp(50));
+        ep.setMargins(0,dp(9),0,0);
+        root.addView(extraPreview,ep);
+        extraPreview.setOnClickListener(v->{
+            if(!PlaybackService.hasSecondaryVoice(this)) {
+                Toast.makeText(this,"새 음성을 먼저 선택해 주세요",Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Intent intent=new Intent(this,PlaybackService.class).setAction(PlaybackService.ACTION_PREVIEW_SECONDARY);
+            startForegroundService(intent);
+        });
+        refreshAudioState();
 
         setContentView(scroll);
         ready=true;
@@ -166,6 +212,13 @@ public final class MainActivity extends Activity {
 
     private void refreshAspectLabel() {
         aspectLabel.setText(String.format(Locale.KOREA,"위젯 틀 비율 조절  ·  가로/세로 %.2f",editor.getCropRatio()));
+    }
+    private void refreshAudioState() {
+        boolean ready=PlaybackService.hasSecondaryVoice(this);
+        if(audioState!=null)audioState.setText(ready ?
+            "✓ 두 번째 음성 등록됨 · 첫 터치부터 원래 음성 재생" :
+            "두 번째 음성 없음 · 아래 버튼에서 합친 M4A 파일을 선택해 주세요");
+        if(extraPreview!=null)extraPreview.setEnabled(ready);
     }
     private int dp(float d){return Math.round(d*getResources().getDisplayMetrics().density);}
     private Button makeButton(String title,int background,int foreground) {
@@ -233,6 +286,19 @@ public final class MainActivity extends Activity {
 
     @Override protected void onActivityResult(int requestCode,int resultCode,Intent data){
         super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode==AUDIO_PICK) {
+            if(resultCode==RESULT_OK && data!=null && data.getData()!=null) {
+                try {
+                    importSecondaryVoice(data.getData());
+                    PlaybackService.resetTapSequence(this);
+                    refreshAudioState();
+                    Toast.makeText(this,"새 음성 등록 완료! 다음 위젯 첫 터치는 원래 음성이에요.",Toast.LENGTH_LONG).show();
+                } catch(Exception e) {
+                    Toast.makeText(this,"음성 파일을 가져오지 못했어요. M4A 파일인지 확인해 주세요.",Toast.LENGTH_LONG).show();
+                }
+            }
+            return;
+        }
         if(requestCode!=PHOTO_PICK||resultCode!=RESULT_OK||data==null||data.getData()==null)return;
         try {
             Bitmap image=decodePhoto(data.getData());
@@ -242,6 +308,26 @@ public final class MainActivity extends Activity {
             saveAndApply(false);
             Toast.makeText(this,"사진을 선택했어요. 틀을 움직이면 위젯도 바뀌어요",Toast.LENGTH_LONG).show();
         }catch(Exception e){Toast.makeText(this,"사진을 열 수 없어요",Toast.LENGTH_LONG).show();}
+    }
+
+    private void importSecondaryVoice(Uri uri) throws Exception {
+        File dest=new File(getFilesDir(),SECOND_VOICE_FILE);
+        File temp=new File(getFilesDir(),SECOND_VOICE_FILE+".tmp");
+        long length=0;
+        try(InputStream in=getContentResolver().openInputStream(uri);
+            FileOutputStream out=new FileOutputStream(temp)) {
+            if(in==null)throw new java.io.IOException("Audio source not found");
+            byte[] buf=new byte[8192];
+            int n;
+            while((n=in.read(buf))!=-1) {
+                length+=n;
+                if(length>30L*1024*1024)throw new java.io.IOException("Audio file too large");
+                out.write(buf,0,n);
+            }
+        }catch(Exception e){temp.delete();throw e;}
+        if(length==0){temp.delete();throw new java.io.IOException("Empty audio");}
+        if(dest.exists()&&!dest.delete()){temp.delete();throw new java.io.IOException("Cannot replace audio");}
+        if(!temp.renameTo(dest)){temp.delete();throw new java.io.IOException("Cannot save audio");}
     }
 
     private Bitmap decodePhoto(Uri uri) throws Exception {
